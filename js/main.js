@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
     if (!AudioContextClass) {
       soundButton.disabled = true;
-      soundButton.setAttribute("aria-label", "Звук дождя недоступен в этом браузере");
+      const label = soundButton.querySelector(".sound-label");
+      if (label) label.textContent = "ЗВУК НЕДОСТУПЕН";
       return;
     }
 

@@ -4,32 +4,106 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#11110f" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <meta name="description" content="Дерри, штат Мэн. Муниципальное дело № 27. История города, который забывает всё — кроме Оно. IT: Welcome to Derry, HBO Original." />
     <meta property="og:title" content="Дерри помнит — IT: Welcome to Derry" />
     <meta property="og:description" content="Муниципальный архив Дерри. Дело № 27. Не всё, что пропало, можно найти." />
     <meta property="og:image" content="https://static.tvmaze.com/uploads/images/original_untouched/594/1485959.jpg" />
     <title>Дерри помнит — IT: Welcome to Derry</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" /></noscript>
-    <link rel="stylesheet" href="css/style.css?v=speed-2" />
-    <script src="js/main.js?v=speed-1" defer></script>
+    <link rel="preload" href="assets/fonts/playfair-display-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/playfair-display-cyrillic-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      @font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 500 700; font-display: swap; src: url("assets/fonts/playfair-display-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+      @font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 500 600; font-display: swap; src: url("assets/fonts/playfair-display-cyrillic-italic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+      :root { color-scheme: dark; --night: #11110f; --soft-white: #eeeae0; --mono: ui-monospace, "SFMono-Regular", Menlo, monospace; --sans: system-ui, sans-serif; --serif: "Playfair Display", Georgia, serif; }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--night); color: var(--soft-white); font-family: var(--sans); font-size: 14px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+      a { color: inherit; }
+      button { font: inherit; }
+      .masthead { position: absolute; z-index: 5; inset: 0 0 auto; display: flex; align-items: center; justify-content: space-between; height: 74px; padding-inline: 5.5vw; border-bottom: 1px solid rgba(239,234,221,.19); color: #e9e4da; }
+      .seal { display: flex; align-items: center; gap: 9px; color: inherit; font-family: var(--mono); font-size: 7px; letter-spacing: .08em; line-height: 1.5; text-decoration: none; }
+      .seal svg { width: 37px; height: 37px; fill: none; stroke: #b4433a; stroke-width: 1; }
+      .seal svg path { fill: #b4433a; stroke: none; }
+      .masthead-center { display: flex; align-items: center; gap: 13px; color: rgba(239,234,221,.58); font-family: var(--mono); font-size: 7px; letter-spacing: .14em; }
+      .masthead-center i { width: 24px; height: 1px; background: #a6302c; }
+      .sound-button { display: flex; align-items: center; gap: 8px; padding: 8px 0 8px 14px; border: 0; border-left: 1px solid rgba(239,234,221,.24); background: transparent; color: rgba(239,234,221,.74); font-family: var(--mono); font-size: 7px; letter-spacing: .1em; cursor: pointer; }
+      .sound-icon { color: #ce6355; font-size: 16px; }
+      .cover { position: relative; min-height: max(730px, min(920px, 100svh)); display: flex; align-items: center; overflow: hidden; isolation: isolate; background: var(--night); }
+      .cover-art { position: absolute; z-index: -2; inset: 0 0 0 31%; overflow: hidden; }
+      .cover-art img { position: absolute; top: -5%; right: -1%; width: min(78vw, 1160px); height: 112%; object-fit: cover; object-position: 50% 38%; filter: saturate(.69) contrast(1.08) brightness(.78); }
+      .cover-shade { position: absolute; inset: 0; background: linear-gradient(90deg, #11110f 0%, rgba(17,17,15,.97) 12%, rgba(17,17,15,.76) 38%, rgba(17,17,15,.16) 69%, rgba(17,17,15,.21) 100%), linear-gradient(0deg, #11110f 0%, transparent 17%, rgba(17,17,15,.18) 100%); }
+      .cover-copy { position: relative; z-index: 1; width: min(660px, 56vw); margin: 38px 0 35px 10.5vw; }
+      .file-label { display: flex; align-items: center; gap: 9px; margin: 0 0 28px; color: rgba(232,228,217,.69); font-family: var(--mono); font-size: 7px; letter-spacing: .12em; }
+      .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #a8463d; box-shadow: 0 0 10px rgba(174,62,53,.6); }
+      .file-slash { color: #c35b4f; }
+      .cover h1 { margin: 0; color: #ede9df; font-family: var(--serif); font-size: clamp(51px, 6.4vw, 86px); font-weight: 500; letter-spacing: -.065em; line-height: 1.02; }
+      .cover h1 em { color: #c34b41; font-weight: 500; }
+      .cover-deck { margin: 21px 0 0; color: rgba(232,228,217,.69); font-size: 12px; line-height: 1.9; }
+      .cover-cta { display: inline-flex; align-items: center; gap: 12px; margin-top: 32px; color: #e7e2d8; font-family: var(--mono); font-size: 7px; letter-spacing: .11em; text-decoration: none; }
+      .cta-seal { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid rgba(183,77,66,.7); border-radius: 50%; color: #d3685b; font-size: 17px; }
+      .cta-line { width: 44px; height: 1px; margin-left: 5px; background: rgba(232,228,217,.4); }
+      .cover-credit { display: block; margin-top: 52px; color: rgba(232,228,217,.49); font-family: var(--mono); font-size: 6px; letter-spacing: .15em; }
+      .cover-credit i { color: #c25249; font-style: normal; }
+      .cover-registration { position: absolute; right: 5.2%; bottom: 21%; display: grid; justify-items: end; gap: 5px; color: rgba(239,234,221,.67); font-family: var(--mono); font-size: 6px; letter-spacing: .14em; }
+      .cover-registration span:first-child { margin-bottom: 4px; color: #e3ded3; font-family: var(--serif); font-size: 12px; font-style: italic; letter-spacing: .05em; }
+      .cover-foot { position: absolute; right: 5.5%; bottom: 32px; left: 5.5%; display: flex; align-items: center; gap: 13px; color: rgba(239,234,221,.48); font-family: var(--mono); font-size: 6px; letter-spacing: .12em; }
+      .cover-foot-dash { width: 30px; height: 1px; background: #a6302c; }
+      @media (max-width: 900px) {
+        .cover-art { left: 23%; }
+        .cover-art img { right: -13%; width: 92vw; object-position: 52% 38%; }
+        .cover-copy { width: 62vw; margin-left: 7vw; }
+        .cover h1 { font-size: clamp(52px, 7.1vw, 70px); }
+      }
+      @media (max-width: 620px) {
+        .masthead { height: 62px; padding-inline: 17px; }
+        .seal svg { width: 31px; height: 31px; }
+        .seal { gap: 7px; font-size: 6px; }
+        .masthead-center { gap: 7px; font-size: 5px; letter-spacing: .08em; }
+        .masthead-center i { width: 12px; }
+        .sound-button { gap: 4px; padding-left: 8px; font-size: 5px; }
+        .sound-icon { font-size: 13px; }
+        .cover { min-height: max(730px, 100svh); align-items: end; }
+        .cover-art { inset: 0; }
+        .cover-art img { top: -4%; right: -31%; width: 124%; height: 96%; object-position: 50% 28%; filter: saturate(.72) contrast(1.05) brightness(.76); }
+        .cover-shade { background: linear-gradient(90deg, rgba(17,17,15,.48), rgba(17,17,15,.05)), linear-gradient(0deg, #11110f 3%, rgba(17,17,15,.91) 25%, rgba(17,17,15,.22) 68%, rgba(17,17,15,.12)); }
+        .cover-copy { width: calc(100% - 40px); margin: 0 20px 101px; }
+        .file-label { gap: 6px; margin-bottom: 18px; font-size: 5px; letter-spacing: .08em; }
+        .cover h1 { font-size: clamp(48px, 11.6vw, 68px); }
+        .cover-deck { margin-top: 14px; font-size: 10px; }
+        .cover-cta { gap: 9px; margin-top: 21px; font-size: 6px; }
+        .cta-seal { width: 31px; height: 31px; }
+        .cover-credit { margin-top: 26px; font-size: 5px; }
+        .cover-registration { top: 23%; right: 18px; bottom: auto; font-size: 5px; }
+        .cover-registration span:first-child { font-size: 9px; }
+        .cover-foot { right: 20px; bottom: 22px; left: 20px; gap: 8px; font-size: 5px; }
+        .cover-foot span:first-child { max-width: 58%; line-height: 1.6; }
+        .cover-foot-dash { width: 17px; flex: 0 0 17px; }
+      }
+      @media (max-width: 370px) {
+        .masthead-center { display: none; }
+        .cover h1 { font-size: 46px; }
+        .file-label { font-size: 4px; }
+      }
+    </style>
+    <link rel="preload" as="style" href="css/style.css?v=speed-4" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="css/style.css?v=speed-4" /></noscript>
+    <script src="js/main.js?v=speed-2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">К материалам дела</a>
     <header class="masthead">
-      <a class="seal" href="#top" aria-label="Муниципальный архив Дерри — наверх">
+      <a class="seal" href="#top" aria-label="Городской архив Дерри — наверх">
         <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19.5"/><circle cx="22" cy="22" r="15.5"/><path d="M14 30V14h8.2c5.2 0 8 2.6 8 8s-2.8 8-8 8H14Zm5-4h3.1c2.1 0 3.1-1.3 3.1-4s-1-4-3.1-4H19v8Z"/></svg>
         <span>ГОРОДСКОЙ<br />АРХИВ</span>
       </a>
       <div class="masthead-center"><span>ШТАТ МЭН</span><i></i><span>ОТКРЫТ С 1711 ГОДА</span></div>
-      <button class="sound-button" type="button" aria-pressed="false" aria-label="Включить звук дождя"><span class="sound-icon" aria-hidden="true">◖</span><span class="sound-label">ЗВУК ВЫКЛ.</span></button>
+      <button class="sound-button" type="button" aria-pressed="false"><span class="sound-icon" aria-hidden="true">◖</span><span class="sound-label">ЗВУК ВЫКЛ.</span></button>
     </header>
 
     <main id="main">
       <section class="cover" id="top" aria-labelledby="cover-title">
-        <div class="cover-art"><picture><source media="(max-width: 620px)" srcset="assets/derry-cover-640.webp 640w, assets/derry-cover-960.webp 960w" sizes="124vw" /><img src="assets/derry-cover-1280.webp" srcset="assets/derry-cover-640.webp 640w, assets/derry-cover-1280.webp 1280w" sizes="(max-width: 900px) 92vw, 78vw" alt="Промо-арт сериала: дети стоят в туннеле над отражением Пеннивайза" fetchpriority="high" /></picture><div class="cover-shade"></div></div>
+        <div class="cover-art"><picture><source media="(max-width: 620px)" srcset="assets/derry-cover-640.webp 640w, assets/derry-cover-768.webp 768w" sizes="124vw" /><img src="assets/derry-cover-1280.webp" srcset="assets/derry-cover-640.webp 640w, assets/derry-cover-1280.webp 1280w" sizes="(max-width: 900px) 92vw, 78vw" width="1280" height="1920" alt="Промо-арт сериала: дети стоят в туннеле над отражением Пеннивайза" fetchpriority="high" /></picture><div class="cover-shade"></div></div>
         <div class="cover-copy">
           <p class="file-label"><span class="live-dot"></span> ГОРОДСКОЙ АРХИВ ДЕРРИ <span class="file-slash">/</span> ДЕЛО № 27-62</p>
           <h1 id="cover-title">В этом городе<br />пропадают <em>дети.</em></h1>

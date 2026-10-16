@@ -8,8 +8,8 @@
   --red: #a6302c;
   --red-dark: #7e211e;
   --soft-white: #eeeae0;
-  --mono: "DM Mono", monospace;
-  --sans: "DM Sans", sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --sans: system-ui, sans-serif;
   --serif: "Playfair Display", Georgia, serif;
 }
 * { box-sizing: border-box; }
