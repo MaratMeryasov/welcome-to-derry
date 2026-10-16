@@ -19,4 +19,6 @@ https://maratmeryasov.github.io/welcome-to-derry/
 - [Промо-баннер сериала](https://static.tvmaze.com/uploads/images/original_untouched/595/1489671.jpg)
 - [Сериал и создатели](https://www.rottentomatoes.com/tv/it_welcome_to_derry)
 
+Изображения для страницы сохранены в `assets/` в формате WebP; для обложки подготовлены версии 640 и 1280 px с адаптивной загрузкой.
+
 Дизайн — неофициальный промо-концепт. Права на сериал и изображения принадлежат HBO и соответствующим правообладателям.
