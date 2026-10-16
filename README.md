@@ -1,6 +1,6 @@
-# IT: Добро пожаловать в Дерри
+# Дерри помнит — IT: Welcome to Derry
 
-Концепт промо-сайта сериала *IT: Welcome to Derry*. Русскоязычный статический лендинг на HTML, CSS и JavaScript.
+Арт-дирекшн-концепция промо-лендинга сериала HBO в форме найденного муниципального дела из Дерри, 1962 год. Статический сайт на HTML, CSS и JavaScript без UI-фреймворков.
 
 ## Запуск
 
@@ -8,15 +8,15 @@
 
 ## Публикация
 
-GitHub Actions публикует сайт на GitHub Pages при push в ветку `main`:
+GitHub Actions публикует сайт на GitHub Pages при каждом push в `main`:
 
 https://maratmeryasov.github.io/welcome-to-derry/
 
-## Материалы
+## Источники
 
-- Официальный трейлер: [HBO Max на YouTube](https://www.youtube.com/watch?v=oKa6u7LT0qE)
-- Промо-арт: [изображение сериала в TVmaze](https://static.tvmaze.com/uploads/images/original_untouched/594/1485959.jpg)
-- Дополнительный баннер: [TVmaze](https://static.tvmaze.com/uploads/images/original_untouched/595/1489671.jpg)
-- Сведения о сериале: [HBO](https://www.hbo.com/it-welcome-to-derry), [TVmaze](https://www.tvmaze.com/shows/61324/it-welcome-to-derry)
+- [Официальный трейлер HBO Max](https://www.youtube.com/watch?v=oKa6u7LT0qE)
+- [Промо-постер сериала](https://static.tvmaze.com/uploads/images/original_untouched/594/1485959.jpg)
+- [Промо-баннер сериала](https://static.tvmaze.com/uploads/images/original_untouched/595/1489671.jpg)
+- [Сериал и создатели](https://www.rottentomatoes.com/tv/it_welcome_to_derry)
 
-Неофициальный дизайн-концепт. Названия, изображения и права на сериал принадлежат соответствующим правообладателям.
+Дизайн — неофициальный промо-концепт. Права на сериал и изображения принадлежат HBO и соответствующим правообладателям.
