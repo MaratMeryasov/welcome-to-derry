@@ -1,15 +1,22 @@
-# Добро пожаловать в Дерри
+# IT: Добро пожаловать в Дерри
 
-Атмосферный русскоязычный фан-лендинг сериала *IT: Welcome to Derry*. Статический сайт на HTML, CSS и JavaScript; без сборщика и внешних UI-библиотек.
+Концепт промо-сайта сериала *IT: Welcome to Derry*. Русскоязычный статический лендинг на HTML, CSS и JavaScript.
 
-## Локальный запуск
+## Запуск
 
-Откройте `index.html` в браузере или запустите любой статический HTTP-сервер в корне проекта.
+Откройте `index.html` в браузере или используйте любой статический HTTP-сервер.
 
 ## Публикация
 
-GitHub Actions автоматически публикует сайт в GitHub Pages при каждом push в `main`. После первого успешного запуска сайт будет доступен по адресу:
+GitHub Actions публикует сайт на GitHub Pages при push в ветку `main`:
 
 https://maratmeryasov.github.io/welcome-to-derry/
 
-Трейлер открывается поиском официального ролика на YouTube. Графика воздушного шара и оформление созданы специально для этого лендинга; это неофициальный фан-сайт.
+## Материалы
+
+- Официальный трейлер: [HBO Max на YouTube](https://www.youtube.com/watch?v=oKa6u7LT0qE)
+- Промо-арт: [изображение сериала в TVmaze](https://static.tvmaze.com/uploads/images/original_untouched/594/1485959.jpg)
+- Дополнительный баннер: [TVmaze](https://static.tvmaze.com/uploads/images/original_untouched/595/1489671.jpg)
+- Сведения о сериале: [HBO](https://www.hbo.com/it-welcome-to-derry), [TVmaze](https://www.tvmaze.com/shows/61324/it-welcome-to-derry)
+
+Неофициальный дизайн-концепт. Названия, изображения и права на сериал принадлежат соответствующим правообладателям.
